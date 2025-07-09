@@ -1,22 +1,294 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Student Welcome</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity:Water</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero {
+  height: 90vh;
+  display: flex;
+  align-items: flex-start;      /* Align content to the top */
+  justify-content: flex-start;  /* Keep content left-aligned */
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;      /* Align overlay content to the top */
+  justify-content: flex-start;
+  padding-left: 5vw;
+  padding-top: 7vh;             /* Push content down a bit from the top */
+  background: rgba(0, 0, 0, 0.20);
+}
+
+.text-content {
+  border-radius: 18px;
+  padding: 40px 32px;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  margin: 0;
+}
+
+.highlight {
+  color: #ffcf48;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+
+.hero-description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diamond-button {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 8px 0;
+  text-align: center;
+  position: relative;
+}
+
+.diamond-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 207, 72, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 0;
+}
+
+.donate-button {
+  background-color: #ffcf48;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none; /* Ensure text decoration is none for links */
+}
+
+.donate-button:hover {
+  background-color: #e6b800;
+}
+
+.testimonial {
+  font-style: italic;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.testimonial-author {
+  display: block;
+  margin-top: 4px;
+  font-weight: bold;
+  color: #ffcf48;
+}
+
+.how-section {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.how-steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.how-step {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 200px;
+  min-width: 220px;
+}
+
+.how-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -10px;
+  left: 0;
+  background: linear-gradient(90deg, transparent, #ffcf48, transparent);
+}
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome, Student!</h1>
-    <form id="nameForm">
-      <input type="text" id="studentName" placeholder="Enter your name" required>
-      <button type="submit">Continue</button>
-    </form>
-    <div id="greeting" class="hidden"></div>
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <div class="logo" style="display: flex; align-items: center; gap: 14px;">
+      <img src="https://avatars.githubusercontent.com/u/279687?s=280&v=4" alt="Charity:Water logo" style="height:48px; width:48px; border-radius:8px; background:#fff;">
+      <span style="font-weight: bold; font-size: 2rem; color: #fff; letter-spacing: 1px; text-shadow: 0 2px 8px rgba(0,0,0,0.18);">
+        Charity : Water
+      </span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <div class="text-content">
+        <h1>
+          Make Giving <span class="highlight">Simple</span>.<br>
+          Make Impact <span class="highlight">Visible</span>.
+        </h1>
+        <p class="subtitle">
+          Every dollar funds safe water projects and we show you exactly how your donation changes lives.
+        </p>
+        <p class="hero-description">
+          <strong>Charity:Water</strong> is a non-profit organization bringing clean and safe drinking water to people in developing countries. 
+          We believe in radical transparency: <span style="color:#ffcf48;">100% of your donation</span> goes directly to water projects, and you’ll see exactly where every dollar goes.
+        </p>
+        <div style="height: 32px;"></div>
+        <a class="donate-button" href="thankyou.html">
+          DONATE NOW
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About Us</h2>
+    <p>
+      Charity:Water is dedicated to bringing clean and safe drinking water to people in developing countries. 
+      Our mission is to make clean water accessible for everyone, everywhere. 
+      We believe in transparency, and 100% of your donation goes directly to water projects.
+    </p>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact-section">
+    <h2>Our Impact</h2>
+    <p>
+      <strong>Over 15 million people</strong> now have access to clean water thanks to our supporters.<br>
+      <span class="impact-highlight">100% of donations go to water projects.</span>
+    </p>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-section">
+    <h2>How It Works</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <span class="how-icon">💧</span>
+        <h3>You Donate</h3>
+        <p>Your gift funds clean water projects for communities in need.</p>
+      </div>
+      <div class="how-step">
+        <span class="how-icon">🚚</span>
+        <h3>We Build</h3>
+        <p>We work with local partners to build sustainable water solutions.</p>
+      </div>
+      <div class="how-step">
+        <span class="how-icon">📍</span>
+        <h3>You See Impact</h3>
+        <p>We send you photos, GPS, and stories from the exact project you helped fund.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thank You Modal -->
+  <div id="thankyou-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Thank You for Donating Today</h2>
+      <p>Your support helps bring clean water to those in need!</p>
+    </div>
   </div>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-message">
+        💧 Thank you for helping us bring clean water to the world.<br>
+        Together, we’re making a difference—one drop at a time.
+      </p>
+      <div class="footer-links">
+        <a href="mailto:info@charitywater.org" title="Email us">Contact</a>
+        <span>|</span>
+        <a href="https://twitter.com/charitywater" target="_blank" rel="noopener">Twitter</a>
+        <span>|</span>
+        <a href="https://www.instagram.com/charitywater/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Charity:Water. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const donateBtn = document.querySelector('.donate-button');
+    const modal = document.getElementById('thankyou-modal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    if (donateBtn) {
+      donateBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+        modal.style.display = 'block';
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  });
+  </script>
 </body>
 </html>
+
